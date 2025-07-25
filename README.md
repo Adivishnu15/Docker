@@ -1,53 +1,130 @@
+# Docker Experiments for Java, Python, and Web Applications
 
+This repository contains Docker experiments demonstrating how to run Java, Python, and Web-based applications inside Docker containers. Each experiment includes Dockerfiles and code examples that illustrate containerization concepts.
 
+---
 
+## 🔧 Installation
 
+First, install Docker on your system:
 
-
-
-
-
-
-
-INSTALLATION Docker installation steps 
-$ sudo apt-get update 
+```bash
+$ sudo apt-get update
 $ sudo apt-get install docker.io
- $ docker –version
-For all java python web steps are same just run code  will be changed just change it 
-	git clone https://github.com/Adivishnu15/Docker.git
-	try to change image names & cntr+c for web code when it pause in a state after run
+$ docker --version
+📥 Clone the Repository
+bash
+Copy
+Edit
+$ git clone https://github.com/Adivishnu15/Docker.git
+$ cd Docker
+🔁 Note: For Java, Python, or Web projects, only the source code and image name change. Docker commands remain the same.
 
-	create a new folder and add required file and Dockerfile 
-	 
-	 $ docker build –t javaimage . 
-	 $ docker run -it javaimage  
+🛠️ General Docker Workflow
+Create a new folder and add your Dockerfile and source code.
 
-	 $ docker login -u username   (enter actual password ,no need of tokens)
+Build your Docker image:
 
-	 $ docker tag image username/image 
+bash
+Copy
+Edit
+$ docker build -t <image-name> .
+Run your Docker container:
 
-	  $ docker push username/image 
+bash
+Copy
+Edit
+$ docker run -it <image-name>
+(Optional) Login to DockerHub:
 
-	 $ docker pull username/ image 
+bash
+Copy
+Edit
+$ docker login -u <your-username>
+Tag and push image to DockerHub:
 
-	$ docker run -it username/ image
-(remember  changes made below everything is same steps for all)
+bash
+Copy
+Edit
+$ docker tag <image> <username>/<image>
+$ docker push <username>/<image>
+Pull image from DockerHub:
 
-  Experiment 5. Explore Docker commands for calculating sum and average of first ten numbers using Java.
-Experiment 6. Explore Docker commands for perform arithmetic operations on two integers using Java
-	docker build -t arithjava .
-	docker run arithjava 10 20
-Experiment 7. Explore Docker commands to display student details (Name, Rollno, Dept) using Java
-8. Explore Docker commands for calculating sum and average of first ten numbers using Python.
-9. Explore Docker commands for perform arithmetic operations on two integers using Python
-	docker build -t arithpy . 
-	docker run arithpy 10 20
-10.Explore Docker commands for display student details (Name, Rollno, Dept) using Python
-11.Explore Docker commands for change of background color of webpage.
-	docker build -t bgcolor-demo .
-	docker run -d -p 8080:80 bgcolor-demo
-12.Explore Docker commands for Login form validation
-	 docker build -t bgcolor-demo .
-	docker run -d -p 8080:80 bgcolor-demo
+bash
+Copy
+Edit
+$ docker pull <username>/<image>
+Run pulled image:
 
+bash
+Copy
+Edit
+$ docker run -it <username>/<image>
+📚 Experiments
+Java-based
+🧪 Experiment 5: Sum and Average of First 10 Numbers
+bash
+Copy
+Edit
+$ docker build -t sumavgjava .
+$ docker run sumavgjava
+🧪 Experiment 6: Arithmetic Operations on Two Integers
+bash
+Copy
+Edit
+$ docker build -t arithjava .
+$ docker run arithjava 10 20
+🧪 Experiment 7: Display Student Details (Name, Roll No, Dept)
+bash
+Copy
+Edit
+$ docker build -t studentjava .
+$ docker run studentjava
+Python-based
+🧪 Experiment 8: Sum and Average of First 10 Numbers
+bash
+Copy
+Edit
+$ docker build -t sumavgpy .
+$ docker run sumavgpy
+🧪 Experiment 9: Arithmetic Operations on Two Integers
+bash
+Copy
+Edit
+$ docker build -t arithpy .
+$ docker run arithpy 10 20
+🧪 Experiment 10: Display Student Details (Name, Roll No, Dept)
+bash
+Copy
+Edit
+$ docker build -t studentpy .
+$ docker run studentpy
+Web-based
+🧪 Experiment 11: Change Background Color of Web Page
+bash
+Copy
+Edit
+$ docker build -t bgcolor-demo .
+$ docker run -d -p 8080:80 bgcolor-demo
+Visit http://localhost:8080 in your browser.
 
+🧪 Experiment 12: Login Form Validation
+bash
+Copy
+Edit
+$ docker build -t loginform-demo .
+$ docker run -d -p 8080:80 loginform-demo
+Visit http://localhost:8080 in your browser.
+
+💡 Tips
+If the Docker container seems to pause/hang, use Ctrl + C to stop.
+
+Make sure to change the image names to avoid conflicts.
+
+Ensure the correct file permissions are set if files aren’t running.
+
+📦 Contributing
+Pull requests are welcome! If you’d like to add more Docker experiments or improve existing ones, feel free to contribute.
+
+📄 License
+This project is licensed under the MIT License.
